@@ -5,11 +5,9 @@ from .routers.data import router
 
 
 sub_app = FastAPI()
-
 sub_app.include_router(router)
 
 client = TestClient(sub_app)
-
 
 def get_settings_override():
     return Settings(
@@ -19,9 +17,7 @@ def get_settings_override():
         github_url="https://github.com",
     )
 
-
 sub_app.dependency_overrides[get_settings] = get_settings_override
-
 
 def test_read_data():
     response = client.get("/api/v1/data")

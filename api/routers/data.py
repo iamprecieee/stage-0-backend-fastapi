@@ -8,7 +8,6 @@ from datetime import datetime
 
 router = APIRouter(prefix="/api/v1")
 
-
 class DataModel(BaseModel):
     email: EmailStr
     current_datetime: datetime
